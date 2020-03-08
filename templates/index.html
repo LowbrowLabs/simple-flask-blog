@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+    <h1>Home - {{blog_name}}</h1>
+    <div class="card mb-3">
+        <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="https://picsum.photos/200/200" class="card-img" alt="Random Picture.">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">A nice card title.</h5>
+                <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Vestibulum vitae congue lacus, in venenatis neque. Nunc urna erat, tristique eget magna vitae, pulvinar dapibus velit. 
+                Proin eget ultrices ante. Praesent efficitur fermentum enim bibendum ornare. Nulla pulvinar lorem a nulla rhoncus imperdiet. 
+                Vivamus finibus elit et nisi molestie egestas quis non purus. 
+                Morbi eget elit sit amet purus porttitor ullamcorper id non enim. 
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque rhoncus ut lorem in dapibus. 
+                In sed interdum quam. Cras id tempus dolor. Cras non sapien urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <h2>Recent Posts</h2>
+        {% with articles=articles  %}
+            {% include "_list.html" %}
+        {% endwith %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}Posts{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+{% with articles=articles  %}
+    {% include "_list.html" %}
+{% endwith %}
+{% endblock %}

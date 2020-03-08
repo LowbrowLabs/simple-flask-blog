@@ -1,0 +1,34 @@
+{% from 'bootstrap/nav.html' import render_nav_item %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    <link rel="stylesheet" href="{{ url_for('pygments_css')  }}">
+    {% endblock %}
+
+    <title>{{blog_name}}</title>
+    {% endblock %}
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <div class="navbar-nav mr-auto">
+          {{ render_nav_item('index', 'Home') }}
+          {{ render_nav_item('posts', 'Posts') }}
+      </div>
+  </nav>
+    <!-- Your page content -->
+    <main class='container'>
+    {% block content %}{% endblock %}
+    </main>
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+  </body>

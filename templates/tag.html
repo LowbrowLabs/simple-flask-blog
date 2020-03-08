@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+<h2>Posts tagged <em>{{ tag }}</em></h2>
+    {% with articles=articles  %}
+        {% include "_list.html" %}
+    {% endwith %}
+{% endblock %}
